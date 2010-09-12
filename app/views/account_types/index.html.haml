@@ -1,0 +1,21 @@
+%h1 Listing account_types
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th
+    %th
+    %th
+
+  - @account_types.each do |account_type|
+    %tr
+      %td= account_type.name
+      %td= account_type.description
+      %td= link_to 'Show', account_type
+      %td= link_to 'Edit', edit_account_type_path(account_type)
+      %td= link_to 'Destroy', account_type, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New account_type', new_account_type_path

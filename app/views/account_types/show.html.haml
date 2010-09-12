@@ -1,0 +1,10 @@
+%p
+  %b Name:
+  = @account_type.name
+%p
+  %b Code:
+  = @account_type.description
+
+= link_to 'Edit', edit_account_type_path(@account_type)
+\|
+= link_to 'Back', account_types_path

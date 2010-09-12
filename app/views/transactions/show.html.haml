@@ -1,0 +1,19 @@
+%p
+  %b Amount:
+  = @transaction.amount
+%p
+  %b Date:
+  = @transaction.date
+%p
+  %b Transaction type:
+  = @transaction.transaction_type
+%p
+  %b Description:
+  = @transaction.description
+%p
+  %b Type:
+  = @transaction.type
+
+= link_to 'Edit', edit_transaction_path(@transaction)
+\|
+= link_to 'Back', transactions_path

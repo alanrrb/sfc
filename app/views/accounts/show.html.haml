@@ -1,0 +1,16 @@
+%p
+  %b Name:
+  = @account.name
+%p
+  %b Initial balance:
+  = @account.initial_balance
+%p
+  %b Description:
+  = @account.description
+%p
+  %b Account type:
+  = @account.account_type
+
+= link_to 'Edit', edit_account_path(@account)
+\|
+= link_to 'Back', accounts_path
