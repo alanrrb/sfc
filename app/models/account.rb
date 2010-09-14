@@ -3,8 +3,14 @@ class Account < ActiveRecord::Base
   has_many :transactions
   
   def balance
-    withdrawals = transactions.withdrawals
-    deposits = transactions.deposits
-    initial_balance + (deposits - withdrawals)
+    initial_balance + (total_deposits - total_withdrawals)
+  end
+  
+  def total_withdrawals
+    transactions.where(:type => Transaction::WITHDRAWAL_TYPE).sum(:amount)
+  end
+
+  def total_deposits
+    transactions.where(:type => Transaction::DEPOSIT_TYPE).sum(:amount)
   end
 end

@@ -17,6 +17,6 @@
     = f.text_field :description
   .field
     = f.label :account_type
-    = f.select :account_type, options_from_collection_for_select(AccountType.all,"id","name")
+    = f.collection_select :account_type_id, AccountType.all, :id, :name
   .actions
     = f.submit 'Save'
